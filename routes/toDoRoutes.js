@@ -15,4 +15,6 @@ module.exports = function(app){
         .put(toDoController.update_task) // update d'une task
         .delete(toDoController.delete_task); // delete d'une task
 
+    app.route('/tasks/new').get(toDoController.get_new);
+
 };

@@ -55,3 +55,13 @@ exports.delete_task = function(req, res){
         res.json({message: 'task deleted'});
     })
 }
+
+//Les nouvelles tâches
+exports.get_new = function(req, res){
+    Task.find({ state : "new" }, function(err, tasks){
+        if(err){
+            res.send(err);
+        }
+        res.json(tasks);
+    })
+}
